@@ -1,0 +1,378 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		631354AE1F76F30600295F42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631354AD1F76F30600295F42 /* AppDelegate.swift */; };
+		631354B61F76F30600295F42 /* Aquatic_Pool_Manager.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 631354B41F76F30600295F42 /* Aquatic_Pool_Manager.xcdatamodeld */; };
+		631354BB1F76F30600295F42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 631354B91F76F30600295F42 /* LaunchScreen.storyboard */; };
+		631354CA1F76F75C00295F42 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 631354C81F76F75C00295F42 /* Main.storyboard */; };
+		631354CC1F76F7C100295F42 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631354CB1F76F7C100295F42 /* FirstViewController.swift */; };
+		631354CE1F76F7D200295F42 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631354CD1F76F7D200295F42 /* SecondViewController.swift */; };
+		631354D01F76F7F400295F42 /* SquarePool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631354CF1F76F7F400295F42 /* SquarePool.swift */; };
+		631354D21F76F80000295F42 /* VarDepSquarePool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631354D11F76F80000295F42 /* VarDepSquarePool.swift */; };
+		631354D41F76F80F00295F42 /* VarDepRectPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631354D31F76F80F00295F42 /* VarDepRectPool.swift */; };
+		631354D61F76F82600295F42 /* BackTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631354D51F76F82600295F42 /* BackTableVC.swift */; };
+		631354D81F76F83800295F42 /* RectPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631354D71F76F83800295F42 /* RectPool.swift */; };
+		631354DB1F76F85C00295F42 /* RoundPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631354DA1F76F85C00295F42 /* RoundPool.swift */; };
+		631354DF1F76F89500295F42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 631354DE1F76F89500295F42 /* Assets.xcassets */; };
+		631354E41F76FF0500295F42 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 631354E31F76FF0500295F42 /* SWRevealViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		631354AA1F76F30600295F42 /* Aquatic Pool Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Aquatic Pool Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		631354AD1F76F30600295F42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		631354B51F76F30600295F42 /* Aquatic_Pool_Manager.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Aquatic_Pool_Manager.xcdatamodel; sourceTree = "<group>"; };
+		631354BA1F76F30600295F42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		631354BC1F76F30600295F42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		631354C91F76F75C00295F42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "../../Pool App Side Menu/Pool App 3.0/Base.lproj/Main.storyboard"; sourceTree = "<group>"; };
+		631354CB1F76F7C100295F42 /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirstViewController.swift; path = "../../Pool App Side Menu/Pool App 3.0/FirstViewController.swift"; sourceTree = "<group>"; };
+		631354CD1F76F7D200295F42 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SecondViewController.swift; path = "../../Pool App Side Menu/Pool App 3.0/SecondViewController.swift"; sourceTree = "<group>"; };
+		631354CF1F76F7F400295F42 /* SquarePool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SquarePool.swift; path = "../../Pool App Side Menu/Pool App 3.0/SquarePool.swift"; sourceTree = "<group>"; };
+		631354D11F76F80000295F42 /* VarDepSquarePool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VarDepSquarePool.swift; path = "../../Pool App Side Menu/Pool App 3.0/VarDepSquarePool.swift"; sourceTree = "<group>"; };
+		631354D31F76F80F00295F42 /* VarDepRectPool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VarDepRectPool.swift; path = "../../Pool App Side Menu/Pool App 3.0/VarDepRectPool.swift"; sourceTree = "<group>"; };
+		631354D51F76F82600295F42 /* BackTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BackTableVC.swift; path = "../../Pool App Side Menu/Pool App 3.0/BackTableVC.swift"; sourceTree = "<group>"; };
+		631354D71F76F83800295F42 /* RectPool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RectPool.swift; path = "../../Pool App Side Menu/Pool App 3.0/RectPool.swift"; sourceTree = "<group>"; };
+		631354DA1F76F85C00295F42 /* RoundPool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoundPool.swift; path = "../../Pool App Side Menu/Pool App 3.0/RoundPool.swift"; sourceTree = "<group>"; };
+		631354DE1F76F89500295F42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../Pool App Side Menu/Pool App 3.0/Assets.xcassets"; sourceTree = "<group>"; };
+		631354E11F76FF0400295F42 /* Aquatic Pool Manager-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Aquatic Pool Manager-Bridging-Header.h"; sourceTree = "<group>"; };
+		631354E21F76FF0500295F42 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = ../../SWRevealViewController.h; sourceTree = "<group>"; };
+		631354E31F76FF0500295F42 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = ../../SWRevealViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		631354A71F76F30600295F42 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		631354A11F76F30600295F42 = {
+			isa = PBXGroup;
+			children = (
+				631354AC1F76F30600295F42 /* Aquatic Pool Manager */,
+				631354AB1F76F30600295F42 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		631354AB1F76F30600295F42 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				631354AA1F76F30600295F42 /* Aquatic Pool Manager.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		631354AC1F76F30600295F42 /* Aquatic Pool Manager */ = {
+			isa = PBXGroup;
+			children = (
+				631354AD1F76F30600295F42 /* AppDelegate.swift */,
+				631354CB1F76F7C100295F42 /* FirstViewController.swift */,
+				631354CD1F76F7D200295F42 /* SecondViewController.swift */,
+				631354C81F76F75C00295F42 /* Main.storyboard */,
+				631354CF1F76F7F400295F42 /* SquarePool.swift */,
+				631354D11F76F80000295F42 /* VarDepSquarePool.swift */,
+				631354D31F76F80F00295F42 /* VarDepRectPool.swift */,
+				631354D51F76F82600295F42 /* BackTableVC.swift */,
+				631354D71F76F83800295F42 /* RectPool.swift */,
+				631354DA1F76F85C00295F42 /* RoundPool.swift */,
+				631354E21F76FF0500295F42 /* SWRevealViewController.h */,
+				631354E31F76FF0500295F42 /* SWRevealViewController.m */,
+				631354DE1F76F89500295F42 /* Assets.xcassets */,
+				631354B91F76F30600295F42 /* LaunchScreen.storyboard */,
+				631354BC1F76F30600295F42 /* Info.plist */,
+				631354B41F76F30600295F42 /* Aquatic_Pool_Manager.xcdatamodeld */,
+				631354E11F76FF0400295F42 /* Aquatic Pool Manager-Bridging-Header.h */,
+			);
+			path = "Aquatic Pool Manager";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		631354A91F76F30600295F42 /* Aquatic Pool Manager */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 631354BF1F76F30600295F42 /* Build configuration list for PBXNativeTarget "Aquatic Pool Manager" */;
+			buildPhases = (
+				631354A61F76F30600295F42 /* Sources */,
+				631354A71F76F30600295F42 /* Frameworks */,
+				631354A81F76F30600295F42 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Aquatic Pool Manager";
+			productName = "Aquatic Pool Manager";
+			productReference = 631354AA1F76F30600295F42 /* Aquatic Pool Manager.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		631354A21F76F30600295F42 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = Zeppo;
+				TargetAttributes = {
+					631354A91F76F30600295F42 = {
+						CreatedOnToolsVersion = 8.0;
+						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 631354A51F76F30600295F42 /* Build configuration list for PBXProject "Aquatic Pool Manager" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 631354A11F76F30600295F42;
+			productRefGroup = 631354AB1F76F30600295F42 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				631354A91F76F30600295F42 /* Aquatic Pool Manager */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		631354A81F76F30600295F42 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				631354CA1F76F75C00295F42 /* Main.storyboard in Resources */,
+				631354DF1F76F89500295F42 /* Assets.xcassets in Resources */,
+				631354BB1F76F30600295F42 /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		631354A61F76F30600295F42 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				631354CE1F76F7D200295F42 /* SecondViewController.swift in Sources */,
+				631354D81F76F83800295F42 /* RectPool.swift in Sources */,
+				631354D41F76F80F00295F42 /* VarDepRectPool.swift in Sources */,
+				631354D01F76F7F400295F42 /* SquarePool.swift in Sources */,
+				631354CC1F76F7C100295F42 /* FirstViewController.swift in Sources */,
+				631354B61F76F30600295F42 /* Aquatic_Pool_Manager.xcdatamodeld in Sources */,
+				631354D21F76F80000295F42 /* VarDepSquarePool.swift in Sources */,
+				631354D61F76F82600295F42 /* BackTableVC.swift in Sources */,
+				631354E41F76FF0500295F42 /* SWRevealViewController.m in Sources */,
+				631354DB1F76F85C00295F42 /* RoundPool.swift in Sources */,
+				631354AE1F76F30600295F42 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		631354B91F76F30600295F42 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				631354BA1F76F30600295F42 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		631354C81F76F75C00295F42 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				631354C91F76F75C00295F42 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		631354BD1F76F30600295F42 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		631354BE1F76F30600295F42 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		631354C01F76F30600295F42 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = "Aquatic Pool Manager/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zeppo.Aquatic-Pool-Manager";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Aquatic Pool Manager/Aquatic Pool Manager-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		631354C11F76F30600295F42 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = "Aquatic Pool Manager/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zeppo.Aquatic-Pool-Manager";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Aquatic Pool Manager/Aquatic Pool Manager-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		631354A51F76F30600295F42 /* Build configuration list for PBXProject "Aquatic Pool Manager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				631354BD1F76F30600295F42 /* Debug */,
+				631354BE1F76F30600295F42 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		631354BF1F76F30600295F42 /* Build configuration list for PBXNativeTarget "Aquatic Pool Manager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				631354C01F76F30600295F42 /* Debug */,
+				631354C11F76F30600295F42 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		631354B41F76F30600295F42 /* Aquatic_Pool_Manager.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				631354B51F76F30600295F42 /* Aquatic_Pool_Manager.xcdatamodel */,
+			);
+			currentVersion = 631354B51F76F30600295F42 /* Aquatic_Pool_Manager.xcdatamodel */;
+			path = Aquatic_Pool_Manager.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 631354A21F76F30600295F42 /* Project object */;
+}
