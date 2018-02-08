@@ -11,7 +11,6 @@
 		631354B61F76F30600295F42 /* Aquatic_Pool_Manager.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 631354B41F76F30600295F42 /* Aquatic_Pool_Manager.xcdatamodeld */; };
 		631354BB1F76F30600295F42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 631354B91F76F30600295F42 /* LaunchScreen.storyboard */; };
 		631354CA1F76F75C00295F42 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 631354C81F76F75C00295F42 /* Main.storyboard */; };
-		631354CC1F76F7C100295F42 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631354CB1F76F7C100295F42 /* FirstViewController.swift */; };
 		631354CE1F76F7D200295F42 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631354CD1F76F7D200295F42 /* SecondViewController.swift */; };
 		631354D01F76F7F400295F42 /* SquarePool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631354CF1F76F7F400295F42 /* SquarePool.swift */; };
 		631354D21F76F80000295F42 /* VarDepSquarePool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631354D11F76F80000295F42 /* VarDepSquarePool.swift */; };
@@ -21,6 +20,8 @@
 		631354DB1F76F85C00295F42 /* RoundPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631354DA1F76F85C00295F42 /* RoundPool.swift */; };
 		631354DF1F76F89500295F42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 631354DE1F76F89500295F42 /* Assets.xcassets */; };
 		631354E41F76FF0500295F42 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 631354E31F76FF0500295F42 /* SWRevealViewController.m */; };
+		63777B97202CA09200A7CDAD /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63777B93202C9CB000A7CDAD /* FirstViewController.swift */; };
+		63CF12D1202250F000056C6F /* PoolStorageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CF12D0202250F000056C6F /* PoolStorageData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,18 +31,19 @@
 		631354BA1F76F30600295F42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		631354BC1F76F30600295F42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		631354C91F76F75C00295F42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "../../Pool App Side Menu/Pool App 3.0/Base.lproj/Main.storyboard"; sourceTree = "<group>"; };
-		631354CB1F76F7C100295F42 /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirstViewController.swift; path = "../../Pool App Side Menu/Pool App 3.0/FirstViewController.swift"; sourceTree = "<group>"; };
-		631354CD1F76F7D200295F42 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SecondViewController.swift; path = "../../Pool App Side Menu/Pool App 3.0/SecondViewController.swift"; sourceTree = "<group>"; };
-		631354CF1F76F7F400295F42 /* SquarePool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SquarePool.swift; path = "../../Pool App Side Menu/Pool App 3.0/SquarePool.swift"; sourceTree = "<group>"; };
-		631354D11F76F80000295F42 /* VarDepSquarePool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VarDepSquarePool.swift; path = "../../Pool App Side Menu/Pool App 3.0/VarDepSquarePool.swift"; sourceTree = "<group>"; };
-		631354D31F76F80F00295F42 /* VarDepRectPool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VarDepRectPool.swift; path = "../../Pool App Side Menu/Pool App 3.0/VarDepRectPool.swift"; sourceTree = "<group>"; };
+		631354CD1F76F7D200295F42 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		631354CF1F76F7F400295F42 /* SquarePool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquarePool.swift; sourceTree = "<group>"; };
+		631354D11F76F80000295F42 /* VarDepSquarePool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VarDepSquarePool.swift; sourceTree = "<group>"; };
+		631354D31F76F80F00295F42 /* VarDepRectPool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VarDepRectPool.swift; sourceTree = "<group>"; };
 		631354D51F76F82600295F42 /* BackTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BackTableVC.swift; path = "../../Pool App Side Menu/Pool App 3.0/BackTableVC.swift"; sourceTree = "<group>"; };
-		631354D71F76F83800295F42 /* RectPool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RectPool.swift; path = "../../Pool App Side Menu/Pool App 3.0/RectPool.swift"; sourceTree = "<group>"; };
-		631354DA1F76F85C00295F42 /* RoundPool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoundPool.swift; path = "../../Pool App Side Menu/Pool App 3.0/RoundPool.swift"; sourceTree = "<group>"; };
-		631354DE1F76F89500295F42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../Pool App Side Menu/Pool App 3.0/Assets.xcassets"; sourceTree = "<group>"; };
+		631354D71F76F83800295F42 /* RectPool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RectPool.swift; sourceTree = "<group>"; };
+		631354DA1F76F85C00295F42 /* RoundPool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundPool.swift; sourceTree = "<group>"; };
+		631354DE1F76F89500295F42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		631354E11F76FF0400295F42 /* Aquatic Pool Manager-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Aquatic Pool Manager-Bridging-Header.h"; sourceTree = "<group>"; };
 		631354E21F76FF0500295F42 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = ../../SWRevealViewController.h; sourceTree = "<group>"; };
 		631354E31F76FF0500295F42 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = ../../SWRevealViewController.m; sourceTree = "<group>"; };
+		63777B93202C9CB000A7CDAD /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		63CF12D0202250F000056C6F /* PoolStorageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoolStorageData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,25 +76,58 @@
 		631354AC1F76F30600295F42 /* Aquatic Pool Manager */ = {
 			isa = PBXGroup;
 			children = (
+				63777B95202C9D3700A7CDAD /* Views */,
+				63777B92202C9C9800A7CDAD /* Controllers */,
+				63777B91202C9C4300A7CDAD /* Data Model */,
+				63777B96202C9D8D00A7CDAD /* Supporting Files */,
 				631354AD1F76F30600295F42 /* AppDelegate.swift */,
-				631354CB1F76F7C100295F42 /* FirstViewController.swift */,
-				631354CD1F76F7D200295F42 /* SecondViewController.swift */,
-				631354C81F76F75C00295F42 /* Main.storyboard */,
-				631354CF1F76F7F400295F42 /* SquarePool.swift */,
-				631354D11F76F80000295F42 /* VarDepSquarePool.swift */,
-				631354D31F76F80F00295F42 /* VarDepRectPool.swift */,
 				631354D51F76F82600295F42 /* BackTableVC.swift */,
-				631354D71F76F83800295F42 /* RectPool.swift */,
-				631354DA1F76F85C00295F42 /* RoundPool.swift */,
+				63CF12D0202250F000056C6F /* PoolStorageData.swift */,
 				631354E21F76FF0500295F42 /* SWRevealViewController.h */,
 				631354E31F76FF0500295F42 /* SWRevealViewController.m */,
-				631354DE1F76F89500295F42 /* Assets.xcassets */,
-				631354B91F76F30600295F42 /* LaunchScreen.storyboard */,
 				631354BC1F76F30600295F42 /* Info.plist */,
-				631354B41F76F30600295F42 /* Aquatic_Pool_Manager.xcdatamodeld */,
 				631354E11F76FF0400295F42 /* Aquatic Pool Manager-Bridging-Header.h */,
 			);
 			path = "Aquatic Pool Manager";
+			sourceTree = "<group>";
+		};
+		63777B91202C9C4300A7CDAD /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				631354B41F76F30600295F42 /* Aquatic_Pool_Manager.xcdatamodeld */,
+			);
+			path = "Data Model";
+			sourceTree = "<group>";
+		};
+		63777B92202C9C9800A7CDAD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				631354D11F76F80000295F42 /* VarDepSquarePool.swift */,
+				631354CF1F76F7F400295F42 /* SquarePool.swift */,
+				631354CD1F76F7D200295F42 /* SecondViewController.swift */,
+				631354D31F76F80F00295F42 /* VarDepRectPool.swift */,
+				63777B93202C9CB000A7CDAD /* FirstViewController.swift */,
+				631354D71F76F83800295F42 /* RectPool.swift */,
+				631354DA1F76F85C00295F42 /* RoundPool.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		63777B95202C9D3700A7CDAD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				631354C81F76F75C00295F42 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		63777B96202C9D8D00A7CDAD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				631354DE1F76F89500295F42 /* Assets.xcassets */,
+				631354B91F76F30600295F42 /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,12 +206,13 @@
 				631354CE1F76F7D200295F42 /* SecondViewController.swift in Sources */,
 				631354D81F76F83800295F42 /* RectPool.swift in Sources */,
 				631354D41F76F80F00295F42 /* VarDepRectPool.swift in Sources */,
+				63777B97202CA09200A7CDAD /* FirstViewController.swift in Sources */,
 				631354D01F76F7F400295F42 /* SquarePool.swift in Sources */,
-				631354CC1F76F7C100295F42 /* FirstViewController.swift in Sources */,
 				631354B61F76F30600295F42 /* Aquatic_Pool_Manager.xcdatamodeld in Sources */,
 				631354D21F76F80000295F42 /* VarDepSquarePool.swift in Sources */,
 				631354D61F76F82600295F42 /* BackTableVC.swift in Sources */,
 				631354E41F76FF0500295F42 /* SWRevealViewController.m in Sources */,
+				63CF12D1202250F000056C6F /* PoolStorageData.swift in Sources */,
 				631354DB1F76F85C00295F42 /* RoundPool.swift in Sources */,
 				631354AE1F76F30600295F42 /* AppDelegate.swift in Sources */,
 			);
