@@ -22,9 +22,11 @@
 		631354E41F76FF0500295F42 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 631354E31F76FF0500295F42 /* SWRevealViewController.m */; };
 		63777B97202CA09200A7CDAD /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63777B93202C9CB000A7CDAD /* FirstViewController.swift */; };
 		63CF12D1202250F000056C6F /* PoolStorageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CF12D0202250F000056C6F /* PoolStorageData.swift */; };
+		7521166C41B4376B9C58CB79 /* Pods_Aquatic_Pool_Manager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19D71D463288E491BD5C8FC2 /* Pods_Aquatic_Pool_Manager.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		19D71D463288E491BD5C8FC2 /* Pods_Aquatic_Pool_Manager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Aquatic_Pool_Manager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		631354AA1F76F30600295F42 /* Aquatic Pool Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Aquatic Pool Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		631354AD1F76F30600295F42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		631354B51F76F30600295F42 /* Aquatic_Pool_Manager.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Aquatic_Pool_Manager.xcdatamodel; sourceTree = "<group>"; };
@@ -44,6 +46,8 @@
 		631354E31F76FF0500295F42 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = ../../SWRevealViewController.m; sourceTree = "<group>"; };
 		63777B93202C9CB000A7CDAD /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		63CF12D0202250F000056C6F /* PoolStorageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoolStorageData.swift; sourceTree = "<group>"; };
+		AF2B3C6635B7EA3D98F94333 /* Pods-Aquatic Pool Manager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aquatic Pool Manager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Aquatic Pool Manager/Pods-Aquatic Pool Manager.debug.xcconfig"; sourceTree = "<group>"; };
+		E9EDFD03DC3679F27B313B85 /* Pods-Aquatic Pool Manager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aquatic Pool Manager.release.xcconfig"; path = "Pods/Target Support Files/Pods-Aquatic Pool Manager/Pods-Aquatic Pool Manager.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,17 +55,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7521166C41B4376B9C58CB79 /* Pods_Aquatic_Pool_Manager.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D072AD9A1C55DAD14E2CB7A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				19D71D463288E491BD5C8FC2 /* Pods_Aquatic_Pool_Manager.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		58B95CC49F44B3A983D557CB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AF2B3C6635B7EA3D98F94333 /* Pods-Aquatic Pool Manager.debug.xcconfig */,
+				E9EDFD03DC3679F27B313B85 /* Pods-Aquatic Pool Manager.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		631354A11F76F30600295F42 = {
 			isa = PBXGroup;
 			children = (
 				631354AC1F76F30600295F42 /* Aquatic Pool Manager */,
 				631354AB1F76F30600295F42 /* Products */,
+				58B95CC49F44B3A983D557CB /* Pods */,
+				3D072AD9A1C55DAD14E2CB7A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -137,9 +161,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 631354BF1F76F30600295F42 /* Build configuration list for PBXNativeTarget "Aquatic Pool Manager" */;
 			buildPhases = (
+				3E4B75EA6074AA8BC2FD0F87 /* [CP] Check Pods Manifest.lock */,
 				631354A61F76F30600295F42 /* Sources */,
 				631354A71F76F30600295F42 /* Frameworks */,
 				631354A81F76F30600295F42 /* Resources */,
+				0802D7FD57C0E7B734525D87 /* [CP] Embed Pods Frameworks */,
+				750D1C18506C04287869D26E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -197,6 +224,62 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0802D7FD57C0E7B734525D87 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Aquatic Pool Manager/Pods-Aquatic Pool Manager-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Aquatic Pool Manager/Pods-Aquatic Pool Manager-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3E4B75EA6074AA8BC2FD0F87 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Aquatic Pool Manager-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		750D1C18506C04287869D26E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Aquatic Pool Manager/Pods-Aquatic Pool Manager-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		631354A61F76F30600295F42 /* Sources */ = {
@@ -347,6 +430,7 @@
 		};
 		631354C01F76F30600295F42 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF2B3C6635B7EA3D98F94333 /* Pods-Aquatic Pool Manager.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -362,6 +446,7 @@
 		};
 		631354C11F76F30600295F42 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9EDFD03DC3679F27B313B85 /* Pods-Aquatic Pool Manager.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

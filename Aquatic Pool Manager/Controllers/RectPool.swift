@@ -22,11 +22,7 @@ class RectPool : UIViewController {
     
     
     
-    @IBOutlet weak var savedLength: UITextField!
-    @IBOutlet weak var savedWidth: UITextField!
-    @IBOutlet weak var savedDepth: UITextField!
-    @IBOutlet weak var savedVolume: UITextField!
-    @IBOutlet weak var savedPoolName: UITextField!
+    
     
     
     
