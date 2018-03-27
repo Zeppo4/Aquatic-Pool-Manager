@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		631354AE1F76F30600295F42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631354AD1F76F30600295F42 /* AppDelegate.swift */; };
-		631354B61F76F30600295F42 /* Aquatic_Pool_Manager.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 631354B41F76F30600295F42 /* Aquatic_Pool_Manager.xcdatamodeld */; };
 		631354BB1F76F30600295F42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 631354B91F76F30600295F42 /* LaunchScreen.storyboard */; };
 		631354CA1F76F75C00295F42 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 631354C81F76F75C00295F42 /* Main.storyboard */; };
 		631354CE1F76F7D200295F42 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631354CD1F76F7D200295F42 /* SecondViewController.swift */; };
@@ -21,7 +20,7 @@
 		631354DF1F76F89500295F42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 631354DE1F76F89500295F42 /* Assets.xcassets */; };
 		631354E41F76FF0500295F42 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 631354E31F76FF0500295F42 /* SWRevealViewController.m */; };
 		63777B97202CA09200A7CDAD /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63777B93202C9CB000A7CDAD /* FirstViewController.swift */; };
-		63CF12D1202250F000056C6F /* PoolStorageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CF12D0202250F000056C6F /* PoolStorageData.swift */; };
+		638CD0F6204894BD008242F4 /* PoolName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638CD0F5204894BD008242F4 /* PoolName.swift */; };
 		7521166C41B4376B9C58CB79 /* Pods_Aquatic_Pool_Manager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19D71D463288E491BD5C8FC2 /* Pods_Aquatic_Pool_Manager.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,7 +28,6 @@
 		19D71D463288E491BD5C8FC2 /* Pods_Aquatic_Pool_Manager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Aquatic_Pool_Manager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		631354AA1F76F30600295F42 /* Aquatic Pool Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Aquatic Pool Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		631354AD1F76F30600295F42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		631354B51F76F30600295F42 /* Aquatic_Pool_Manager.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Aquatic_Pool_Manager.xcdatamodel; sourceTree = "<group>"; };
 		631354BA1F76F30600295F42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		631354BC1F76F30600295F42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		631354C91F76F75C00295F42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "../../Pool App Side Menu/Pool App 3.0/Base.lproj/Main.storyboard"; sourceTree = "<group>"; };
@@ -45,7 +43,7 @@
 		631354E21F76FF0500295F42 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = ../../SWRevealViewController.h; sourceTree = "<group>"; };
 		631354E31F76FF0500295F42 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = ../../SWRevealViewController.m; sourceTree = "<group>"; };
 		63777B93202C9CB000A7CDAD /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		63CF12D0202250F000056C6F /* PoolStorageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoolStorageData.swift; sourceTree = "<group>"; };
+		638CD0F5204894BD008242F4 /* PoolName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoolName.swift; sourceTree = "<group>"; };
 		AF2B3C6635B7EA3D98F94333 /* Pods-Aquatic Pool Manager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aquatic Pool Manager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Aquatic Pool Manager/Pods-Aquatic Pool Manager.debug.xcconfig"; sourceTree = "<group>"; };
 		E9EDFD03DC3679F27B313B85 /* Pods-Aquatic Pool Manager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aquatic Pool Manager.release.xcconfig"; path = "Pods/Target Support Files/Pods-Aquatic Pool Manager/Pods-Aquatic Pool Manager.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -100,13 +98,12 @@
 		631354AC1F76F30600295F42 /* Aquatic Pool Manager */ = {
 			isa = PBXGroup;
 			children = (
+				631354AD1F76F30600295F42 /* AppDelegate.swift */,
 				63777B95202C9D3700A7CDAD /* Views */,
 				63777B92202C9C9800A7CDAD /* Controllers */,
 				63777B91202C9C4300A7CDAD /* Data Model */,
 				63777B96202C9D8D00A7CDAD /* Supporting Files */,
-				631354AD1F76F30600295F42 /* AppDelegate.swift */,
 				631354D51F76F82600295F42 /* BackTableVC.swift */,
-				63CF12D0202250F000056C6F /* PoolStorageData.swift */,
 				631354E21F76FF0500295F42 /* SWRevealViewController.h */,
 				631354E31F76FF0500295F42 /* SWRevealViewController.m */,
 				631354BC1F76F30600295F42 /* Info.plist */,
@@ -118,7 +115,7 @@
 		63777B91202C9C4300A7CDAD /* Data Model */ = {
 			isa = PBXGroup;
 			children = (
-				631354B41F76F30600295F42 /* Aquatic_Pool_Manager.xcdatamodeld */,
+				638CD0F5204894BD008242F4 /* PoolName.swift */,
 			);
 			path = "Data Model";
 			sourceTree = "<group>";
@@ -126,13 +123,13 @@
 		63777B92202C9C9800A7CDAD /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				631354D11F76F80000295F42 /* VarDepSquarePool.swift */,
-				631354CF1F76F7F400295F42 /* SquarePool.swift */,
-				631354CD1F76F7D200295F42 /* SecondViewController.swift */,
-				631354D31F76F80F00295F42 /* VarDepRectPool.swift */,
 				63777B93202C9CB000A7CDAD /* FirstViewController.swift */,
+				631354CD1F76F7D200295F42 /* SecondViewController.swift */,
 				631354D71F76F83800295F42 /* RectPool.swift */,
 				631354DA1F76F85C00295F42 /* RoundPool.swift */,
+				631354CF1F76F7F400295F42 /* SquarePool.swift */,
+				631354D11F76F80000295F42 /* VarDepSquarePool.swift */,
+				631354D31F76F80F00295F42 /* VarDepRectPool.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -291,11 +288,10 @@
 				631354D41F76F80F00295F42 /* VarDepRectPool.swift in Sources */,
 				63777B97202CA09200A7CDAD /* FirstViewController.swift in Sources */,
 				631354D01F76F7F400295F42 /* SquarePool.swift in Sources */,
-				631354B61F76F30600295F42 /* Aquatic_Pool_Manager.xcdatamodeld in Sources */,
 				631354D21F76F80000295F42 /* VarDepSquarePool.swift in Sources */,
 				631354D61F76F82600295F42 /* BackTableVC.swift in Sources */,
+				638CD0F6204894BD008242F4 /* PoolName.swift in Sources */,
 				631354E41F76FF0500295F42 /* SWRevealViewController.m in Sources */,
-				63CF12D1202250F000056C6F /* PoolStorageData.swift in Sources */,
 				631354DB1F76F85C00295F42 /* RoundPool.swift in Sources */,
 				631354AE1F76F30600295F42 /* AppDelegate.swift in Sources */,
 			);
@@ -481,19 +477,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		631354B41F76F30600295F42 /* Aquatic_Pool_Manager.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				631354B51F76F30600295F42 /* Aquatic_Pool_Manager.xcdatamodel */,
-			);
-			currentVersion = 631354B51F76F30600295F42 /* Aquatic_Pool_Manager.xcdatamodel */;
-			path = Aquatic_Pool_Manager.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 631354A21F76F30600295F42 /* Project object */;
 }

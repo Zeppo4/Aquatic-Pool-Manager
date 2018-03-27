@@ -7,13 +7,13 @@
 //
 
 import Foundation
+import RealmSwift
 
 class VarDepSquarePool : UIViewController {
     
+    let realm = try! Realm()
     
-    
-    
-    
+    @IBOutlet weak var varDepSquarePoolName: UITextField!
     @IBOutlet weak var VarDepSquarePoolButton: UIBarButtonItem!
     @IBOutlet weak var varDepSquareLength: UITextField!
     @IBOutlet weak var varDepSquareWidth: UITextField!
@@ -32,15 +32,91 @@ class VarDepSquarePool : UIViewController {
         
         
         view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        
+        loadPoolData()
 }
     
     @IBAction func Calculate(_ sender: AnyObject) {
         let varDepSquareDepth = (Double(varDepSquareDepth1.text!)! + Double(varDepSquareDepth2.text!)! / 2)
         
-        let VarDepSquareVolume = Double(varDepSquareLength.text!)! * Double(varDepSquareWidth.text!)! * Double(varDepSquareDepth) * 7.5
+        let varDepSquareVolume = Double(varDepSquareLength.text!)! * Double(varDepSquareWidth.text!)! * Double(varDepSquareDepth) * 7.5
         
-        self.varDepSquareVolume.text = String(format: "%.0f", VarDepSquareVolume)
+        //self.varDepSquareVolume.text = String(format: "%.0f", VarDepSquareVolume)
         
+        
+        do {
+            try self.realm.write {
+                let varDepSquarePool = PoolName()
+                varDepSquarePool.type = "varDepSquare"
+                varDepSquarePool.name = String(self.varDepSquarePoolName.text!)!
+                varDepSquarePool.width = Double(self.varDepSquareWidth.text!)!
+                varDepSquarePool.length = Double(self.varDepSquareLength.text!)!
+                varDepSquarePool.depth1 = Double(self.varDepSquareDepth1.text!)!
+                varDepSquarePool.depth2 = Double(self.varDepSquareDepth2.text!)!
+                //varDepSquarePool.depth = Double(varDepSquareDepth)
+                varDepSquarePool.volume = Double(varDepSquareVolume)
+                self.realm.add(varDepSquarePool)
+            }
+        } catch {
+            print("Error saving new Pool, \(error)")
+        }
+        
+        loadPoolData()
+        
+    }
+    
+    //MARK: - Load Pool Data
+    
+    func loadPoolData() {
+        let varDepSquarePool = realm.objects(PoolName.self)
+        
+        if varDepSquarePool.isEmpty {
+            varDepSquarePoolName.text = "Add New Pool"
+        } else {
+            
+            for pool in varDepSquarePool {
+                if pool.type == "varDepSquare" {
+                    varDepSquarePoolName.text = pool.name
+                    varDepSquareWidth.text = String(pool.width)
+                    varDepSquareLength.text = String(pool.length)
+                    varDepSquareDepth1.text = String(pool.depth1)
+                    varDepSquareDepth2.text = String(pool.depth2)
+                    varDepSquareVolume.text = String(pool.volume)
+                } else {
+                    print("not varDepSquare type")
+                }
+            }
+            
+        }
+        
+    
+    }
+    //MARK: - Reset Button
+    
+    @IBAction func resetButton(_ sender: AnyObject) {
+        let verDepSquarePool = realm.objects(PoolName.self)
+        
+        if verDepSquarePool.isEmpty {
+            varDepSquarePoolName.text = "No Pool to delete"
+        } else {
+            
+            for pool in verDepSquarePool {
+                if pool.type == "rect" {
+                    do {
+                        try realm.write {
+                            realm.delete(pool)
+                        }
+                    } catch {
+                        print("Error deleting data, \(error)")
+                    }
+                } else {
+                    print("not rect type")
+                }
+            }
+            
+        }
+        
+        loadPoolData()
     }
     
     

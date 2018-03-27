@@ -70,6 +70,8 @@ class SecondViewController: UIViewController {
     var lowPH = 0.0
     var highPH = 0.0
     
+    var totalAlkFactor = 0.0
+    
     var clickFCResults = String()
     
     
@@ -297,14 +299,42 @@ class SecondViewController: UIViewController {
         
         
     }
+    
+//MARK: Total Alkalinity Factor
+    
+//    func totalAlkalinityFactor(resultsAlk: UITextField) {
+//
+//        var resultsAlkFactor: Double? = Double(resultsAlk.text!)
+//
+//        if resultsAlkFactor >= 0.0 && resultsAlkFactor < 6.0 { let totalAlkFactor = 0.7
+//        } else if resultsAlkFactor < 26 {
+//            let totalAlkFactor = 1.4
+//        } else if resultsAlkFactor < 51 {
+//            let totalAlkFactor = 1.7
+//        } else if resultsAlkFactor < 76 {
+//            let totalAlkFactor = 1.9
+//        } else if resultsAlkFactor < 101 {
+//            let totalAlkFactor = 2.0
+//        } else if resultsAlkFactor =< 126 {
+//            let totalAlkFactor = 2.1
+//        } else if resultsAlkFactor < 151 {
+//            let totalAlkFactor = 2.2
+//        } else if resultsAlkFactor < 201 {
+//            let totalAlkFactor = 2.3
+//        } else if resultsAlkFactor < 251 {
+//            let totalAlkFactor = 2.4
+//        } else if resultsAlkFactor < 301 {
+//            let totalAlkFactor = 2.5
+//        } else if resultsAlkFactor < 401 {
+//            let totalAlkFactor = 2.6
+//        } else if resultsAlkFactor < 801 {
+//            let totalAlkFactor = 2.9
+//        } else { let totalAlkFactor = 3.0
+//        }
+//
+    
+    
 }
-
-
-
-
-
-
-
 
 extension UITextField {
     func inRange() {
@@ -335,6 +365,8 @@ extension UITextField {
         
     }
 }
+
+
 
 
 

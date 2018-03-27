@@ -5,14 +5,15 @@
 //  Created by Mac User on 9/8/17.
 //  Copyright © 2017 Zeppo. All rights reserved.
 //
-import UIKit
+
 import Foundation
-import CoreData
+import RealmSwift
 
 class VarDepRectPool : UIViewController {
     
+    let realm = try! Realm()
     
-    
+    @IBOutlet weak var varDepRectName: UITextField!
     @IBOutlet weak var VarDepRectPoolButton: UIBarButtonItem!
     
     @IBOutlet weak var varDepRectLength: UITextField!
@@ -20,16 +21,7 @@ class VarDepRectPool : UIViewController {
     @IBOutlet weak var varDepRectDepth1: UITextField!
     @IBOutlet weak var varDepRectDepth2: UITextField!
     @IBOutlet weak var varDepRectVolume: UITextField!
-    
-    @IBOutlet weak var cdLength: UITextField!
-    @IBOutlet weak var cdWidth: UITextField!
-    @IBOutlet weak var cdDepth: UITextField!
-    @IBOutlet weak var cdVolume: UITextField!
-    
-    
-    
-    
-    
+   
     override func viewDidLoad() {
         
         VarDepRectPoolButton.target = revealViewController()
@@ -40,7 +32,7 @@ class VarDepRectPool : UIViewController {
         
         view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
          
-        
+       loadPoolData()
         
         
         
@@ -52,92 +44,84 @@ class VarDepRectPool : UIViewController {
         
         let varDepRectVolume1 = Double(varDepRectLength.text!)! * Double(varDepRectWidth.text!)! * Double(VarDepRectDepth) * 7.5
         
-        self.varDepRectVolume.text = String(format: "%.0f", varDepRectVolume1)
-        
-        //Saving to Core Data
-        
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        
-        let context = appDelegate.persistentContainer.viewContext
-        
-        
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Pool")
-        
-        request.returnsObjectsAsFaults = false
-
-        
-        
-        
-        let newPool = NSEntityDescription.insertNewObject(forEntityName: "Pool", into: context)
-        
-        newPool.setValue(Double(varDepRectLength.text!)!, forKey: "length")
-        newPool.setValue(Double(varDepRectWidth.text!)!, forKey: "width")
-        newPool.setValue(Double(varDepRectDepth1.text!), forKey: "depth1")
-        newPool.setValue(Double(varDepRectDepth2.text!), forKey: "depth2")
-        newPool.setValue(Double(varDepRectVolume.text!)!, forKey: "volume")
-        
-        
-        do
-        {
-         try context.save()
-           print ("SAVED")
+        do {
+            try self.realm.write {
+                let varDepRectPool = PoolName()
+                varDepRectPool.type = "varDepRect"
+                varDepRectPool.name = String(self.varDepRectName.text!)!
+                varDepRectPool.width = Double(self.varDepRectWidth.text!)!
+                varDepRectPool.length = Double(self.varDepRectLength.text!)!
+                varDepRectPool.depth1 = Double(self.varDepRectDepth1.text!)!
+                varDepRectPool.depth2 = Double(self.varDepRectDepth2.text!)!
+                varDepRectPool.volume = Double(varDepRectVolume1)
+                self.realm.add(varDepRectPool)
+            }
+        } catch {
+            print("Error saving new Pool, \(error)")
         }
-        catch
-        {
-        //Process error
-        }
+        
+        loadPoolData()
+        
+    }
     
-    //Retreving datat from core data
+    //MARK: - Load Pool Data
     
+    func loadPoolData() {
+        var a = 1
         
+        let varDepRectPool = realm.objects(PoolName.self)
         
-        request.returnsObjectsAsFaults = false
-        
-        
-        do
-        {
-            let results = try context.fetch(request)
+        if varDepRectPool.isEmpty {
+            varDepRectName.text = "Add New Pool"
+        } else {
             
-            if results.count > 0
-            {
-                for result in results as! [NSManagedObject]
-                {
-                    if let length = result.value(forKey: "length")
-                    {
-                        print(length)
-                    }
-                    if let width = result.value(forKey: "width")
-                    {
-                        
-                        print(width)
-                    }
-                    if let depth1 = result.value(forKey: "depth1")
-                    {
-                        
-                        print(depth1)
-                    }
-                    if let depth2 = result.value(forKey: "depth2")
-                    {
-                        
-                        print(depth2)
-                    }
-
-                    if let volume = result.value(forKey: "volume")
-                    {
-                        
-                        print(volume)
-                    }
+            for pool in varDepRectPool {
+                if pool.type == "varDepRect" {
+                    varDepRectName.text = pool.name
+                    varDepRectWidth.text = String(pool.width)
+                    varDepRectLength.text = String(pool.length)
+                    varDepRectDepth1.text = String(pool.depth1)
+                    varDepRectDepth2.text = String(pool.depth2)
+                    varDepRectVolume.text = String(pool.volume)
+                } else {
+                     a += 1
                 }
             }
+            print(a)
         }
-        catch
-        {
-            //Process error
-        }
-
-
+        
     }
+    //MARK: - Reset Button
+    
+    @IBAction func resetButton(_ sender: AnyObject) {
+        let varDepRectPool = realm.objects(PoolName.self)
+        
+        if varDepRectPool.isEmpty {
+            varDepRectName.text = "No Pool to delete"
+        } else {
+            
+            for pool in varDepRectPool {
+                if pool.type == "rect" {
+                    do {
+                        try realm.write {
+                            realm.delete(pool)
+                        }
+                    } catch {
+                        print("Error deleting data, \(error)")
+                    }
+                } else {
+                    print("not rect type")
+                }
+            }
+            
+        }
+        
+        loadPoolData()
+    }
+    
     
 }
 
+        
+        
 

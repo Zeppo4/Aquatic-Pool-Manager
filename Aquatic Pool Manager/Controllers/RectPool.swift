@@ -7,25 +7,34 @@
 //
 
 import Foundation
+import RealmSwift
 
 
 class RectPool : UIViewController {
     
-    let defaults = UserDefaults.standard
+    let realm = try! Realm()
+    
+    
+    //var RectPoolName: Results<PoolName>!
+    
+    
+ //   var name: Results<PoolName>?
+//    var width: Results<PoolName>?
+//    var length: Results<PoolName>?
+//    var depth: Results<PoolName>?
+//    var volume: Results<PoolName>?
+    
     
     @IBOutlet weak var menuRectButton: UIBarButtonItem!
     @IBOutlet weak var poolWidth: UITextField!
     @IBOutlet weak var poolLength: UITextField!
     @IBOutlet weak var poolDepth: UITextField!
     @IBOutlet weak var RectPoolVolume: UITextField!
-    @IBOutlet weak var RectPoolName: UITextField!
+    @IBOutlet weak var inputPoolName: UITextField!
     
     
     
-    
-    
-    
-    
+//MARK: - View Datasource Methods
     
     override func viewDidLoad() {
         
@@ -34,86 +43,104 @@ class RectPool : UIViewController {
         revealViewController().rearViewRevealWidth = 275
         revealViewController().rightViewRevealWidth = 160
         
-        
         view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-       
-        recallDataInStorage()
         
+        
+        loadPoolData()
         
     }
+
+    
+//MARK: - Calculate button pressed
+    
     @IBAction func Calculate(_ sender: AnyObject) {
         
-        print("Calucate button is working!")
-        
         let rectPoolVolume = Double(poolLength.text!)! * Double(poolWidth.text!)! * Double(poolDepth.text!)! * 7.5
+        print(rectPoolVolume)
         
-        self.RectPoolVolume.text = String(format: "%.0f", rectPoolVolume)
+        //self.RectPoolVolume.text = String(format: "%.0f", rectPoolVolume)
         
-        //Create an instance of different objects
         
-        defaults.set(Double(poolLength.text!), forKey: "Length")
-        defaults.set(Double(poolWidth.text!), forKey: "Width")
-        defaults.set(Double(poolDepth.text!), forKey: "Depth")
-        defaults.set(Double(RectPoolVolume.text!), forKey: "Volume")
-        defaults.set(RectPoolName.text!, forKey: "PoolName")
-    
-        print(poolLength.text!)
-        recallDataInStorage()
+        
+        do {
+            try self.realm.write {
+                let RectPoolName = PoolName()
+                RectPoolName.type = "rect"
+                RectPoolName.name = String(self.inputPoolName.text!)!
+                RectPoolName.width = Double(self.poolWidth.text!)!
+                RectPoolName.length = Double(self.poolLength.text!)!
+                RectPoolName.depth1 = Double(self.poolDepth.text!)!
+                RectPoolName.volume = Double(rectPoolVolume)
+                self.realm.add(RectPoolName)
+            }
+        } catch {
+            print("Error saving new Pool, \(error)")
+        }
+        
+        loadPoolData()
     }
+    
+//MARK: - Reset butten pressed
     
     @IBAction func resetButton(_ sender: AnyObject) {
-       
-        print("Reset button pushed")
+        let rectPoolName = realm.objects(PoolName.self)
         
-        defaults.removeObject(forKey: "Length")
-        defaults.removeObject(forKey: "Width")
-        defaults.removeObject(forKey: "Depth")
-        defaults.removeObject(forKey: "Volume")
-        defaults.removeObject(forKey: "PoolName")
         
-        recallDataInStorage()
+        if rectPoolName.isEmpty {
+            inputPoolName.text = "No Pool to delete"
+        } else {
+            
+            for pool in rectPoolName {
+                if pool.type == "rect" {
+                    do {
+                        try realm.write {
+                        realm.delete(pool)
+                        }
+                    } catch {
+                        print("Error deleting data, \(error)")
+                    }
+                } else {
+                    print("not rect type")
+                }
+            }
+            
+        }
+        
+        loadPoolData()
         
     
     }
+//MARK: - Recall data from realm
     
-    func recallDataInStorage() {
-        if (defaults.double(forKey: "Length") != 0.0) {
-            
-            print("Length is greater then 0")
-            
-            let savedRectLength = defaults.double(forKey: "Length")
-            let savedRectWidth = defaults.double(forKey: "Width")
-            let savedRectDepth = defaults.double(forKey: "Depth")
-            let savedRectVolume = defaults.double(forKey: "Volume")
-            let savedRectPoolName = defaults.string(forKey: "PoolName")
-            
-            self.poolLength.text = String(format: "%.1f", savedRectLength)
-            self.poolWidth.text = String(format: "%.1f", savedRectWidth)
-            self.poolDepth.text = String(format: "%.1f", savedRectDepth)
-            self.RectPoolVolume.text = String(format: "%.1f", savedRectVolume)
-            self.RectPoolName.text = savedRectPoolName
-            
-            print("If statement working")
-            
+    func loadPoolData() {
+        
+        let rectPoolName = realm.objects(PoolName.self)
+        
+        
+        if rectPoolName.isEmpty {
+           inputPoolName.text = "Add New Pool"
         } else {
-            print("if statement, not passing")
-            let savedRectLength = defaults.double(forKey: "Length")
-            let savedRectWidth = defaults.double(forKey: "Width")
-            let savedRectDepth = defaults.double(forKey: "Depth")
-            let savedRectVolume = defaults.double(forKey: "Volume")
-            //let savedRectPoolName = defaults.string(forKey: "PoolName")
             
-            self.poolLength.text = String(format: "%.1f", savedRectLength)
-            self.poolWidth.text = String(format: "%.1f", savedRectWidth)
-            self.poolDepth.text = String(format: "%.1f", savedRectDepth)
-            self.RectPoolVolume.text = String(format: "%.1f", savedRectVolume)
-            self.RectPoolName.text = "Enter new data"
-
+        for pool in rectPoolName {
+            if pool.type == "rect" {
+                inputPoolName.text = pool.name
+                poolWidth.text = String(pool.width)
+                poolLength.text = String(pool.length)
+                poolDepth.text = String(pool.depth1)
+                RectPoolVolume.text = String(pool.volume)
+            } else {
+                poolWidth.text = ""
+                poolLength.text = ""
+                poolDepth.text = ""
+                RectPoolVolume.text = ""
+                inputPoolName.text = "Add New Pool"
+            }
+            }
+            
+           }
+        
         }
-    } 
     
     
-
-    
-    
+    //MARK: - End of Class
 }
