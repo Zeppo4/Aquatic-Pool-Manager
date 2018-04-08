@@ -19,6 +19,7 @@
 		631354DB1F76F85C00295F42 /* RoundPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631354DA1F76F85C00295F42 /* RoundPool.swift */; };
 		631354DF1F76F89500295F42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 631354DE1F76F89500295F42 /* Assets.xcassets */; };
 		631354E41F76FF0500295F42 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 631354E31F76FF0500295F42 /* SWRevealViewController.m */; };
+		636D5CCB206D28B800630503 /* Alkalinity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636D5CCA206D28B800630503 /* Alkalinity.swift */; };
 		63777B97202CA09200A7CDAD /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63777B93202C9CB000A7CDAD /* FirstViewController.swift */; };
 		638CD0F6204894BD008242F4 /* PoolName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638CD0F5204894BD008242F4 /* PoolName.swift */; };
 		7521166C41B4376B9C58CB79 /* Pods_Aquatic_Pool_Manager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19D71D463288E491BD5C8FC2 /* Pods_Aquatic_Pool_Manager.framework */; };
@@ -42,6 +43,7 @@
 		631354E11F76FF0400295F42 /* Aquatic Pool Manager-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Aquatic Pool Manager-Bridging-Header.h"; sourceTree = "<group>"; };
 		631354E21F76FF0500295F42 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = ../../SWRevealViewController.h; sourceTree = "<group>"; };
 		631354E31F76FF0500295F42 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = ../../SWRevealViewController.m; sourceTree = "<group>"; };
+		636D5CCA206D28B800630503 /* Alkalinity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alkalinity.swift; sourceTree = "<group>"; };
 		63777B93202C9CB000A7CDAD /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		638CD0F5204894BD008242F4 /* PoolName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoolName.swift; sourceTree = "<group>"; };
 		AF2B3C6635B7EA3D98F94333 /* Pods-Aquatic Pool Manager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aquatic Pool Manager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Aquatic Pool Manager/Pods-Aquatic Pool Manager.debug.xcconfig"; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 		63777B91202C9C4300A7CDAD /* Data Model */ = {
 			isa = PBXGroup;
 			children = (
+				636D5CCA206D28B800630503 /* Alkalinity.swift */,
 				638CD0F5204894BD008242F4 /* PoolName.swift */,
 			);
 			path = "Data Model";
@@ -288,6 +291,7 @@
 				631354D41F76F80F00295F42 /* VarDepRectPool.swift in Sources */,
 				63777B97202CA09200A7CDAD /* FirstViewController.swift in Sources */,
 				631354D01F76F7F400295F42 /* SquarePool.swift in Sources */,
+				636D5CCB206D28B800630503 /* Alkalinity.swift in Sources */,
 				631354D21F76F80000295F42 /* VarDepSquarePool.swift in Sources */,
 				631354D61F76F82600295F42 /* BackTableVC.swift in Sources */,
 				638CD0F6204894BD008242F4 /* PoolName.swift in Sources */,

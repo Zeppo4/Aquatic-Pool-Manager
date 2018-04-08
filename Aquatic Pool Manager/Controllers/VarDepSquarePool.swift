@@ -82,8 +82,14 @@ class VarDepSquarePool : UIViewController {
                     varDepSquareDepth1.text = String(pool.depth1)
                     varDepSquareDepth2.text = String(pool.depth2)
                     varDepSquareVolume.text = String(pool.volume)
+                    break
                 } else {
-                    print("not varDepSquare type")
+                    varDepSquarePoolName.text = ""
+                    varDepSquareWidth.text = ""
+                    varDepSquareLength.text = ""
+                    varDepSquareDepth1.text = ""
+                    varDepSquareDepth2.text = ""
+                    varDepSquareVolume.text = ""
                 }
             }
             
@@ -101,7 +107,7 @@ class VarDepSquarePool : UIViewController {
         } else {
             
             for pool in verDepSquarePool {
-                if pool.type == "rect" {
+                if pool.type == "varDepSquare" {
                     do {
                         try realm.write {
                             realm.delete(pool)

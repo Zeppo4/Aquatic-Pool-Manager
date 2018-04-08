@@ -76,8 +76,13 @@ class SquarePool : UIViewController {
                     squarePoolLength.text = String(pool.length)
                     squarePoolDepth.text = String(pool.depth1)
                     squarePoolVolume.text = String(pool.volume)
+                    break
                 } else {
-                    print("not round type")
+                    squarePoolName.text = ""
+                    squarePoolWidth.text = ""
+                    squarePoolLength.text = ""
+                    squarePoolDepth.text = ""
+                    squarePoolVolume.text = ""
                 }
             }
             
@@ -95,7 +100,7 @@ class SquarePool : UIViewController {
             } else {
     
             for pool in squarePool {
-                if pool.type == "rect" {
+                if pool.type == "square" {
                     do {
                         try realm.write {
                             realm.delete(pool)

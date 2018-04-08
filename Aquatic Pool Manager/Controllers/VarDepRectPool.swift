@@ -83,11 +83,17 @@ class VarDepRectPool : UIViewController {
                     varDepRectDepth1.text = String(pool.depth1)
                     varDepRectDepth2.text = String(pool.depth2)
                     varDepRectVolume.text = String(pool.volume)
+                    break
                 } else {
-                     a += 1
+                    varDepRectName.text = ""
+                    varDepRectWidth.text = ""
+                    varDepRectLength.text = ""
+                    varDepRectDepth1.text = ""
+                    varDepRectDepth2.text = ""
+                    varDepRectVolume.text = ""
                 }
             }
-            print(a)
+           
         }
         
     }
@@ -101,7 +107,7 @@ class VarDepRectPool : UIViewController {
         } else {
             
             for pool in varDepRectPool {
-                if pool.type == "rect" {
+                if pool.type == "varDepRect" {
                     do {
                         try realm.write {
                             realm.delete(pool)

@@ -74,13 +74,20 @@ class RoundPool : UIViewController {
             
             for pool in roundPool {
                 if pool.type == "round" {
+                    
                     roundPoolName.text = pool.name
                     roundPoolWidth.text = String(pool.width)
                     roundPoolLength.text = String(pool.length)
                     roundPoolDepth.text = String(pool.depth1)
                     roundPoolVolume.text = String(pool.volume)
+                    break
                 } else {
-                    print("not round type")
+                    
+                    roundPoolName.text = ""
+                    roundPoolWidth.text = ""
+                    roundPoolLength.text = ""
+                    roundPoolDepth.text = ""
+                    roundPoolVolume.text = ""
                 }
             }
             
@@ -98,7 +105,7 @@ class RoundPool : UIViewController {
         } else {
             
             for pool in roundPool {
-                if pool.type == "rect" {
+                if pool.type == "round" {
                     do {
                         try realm.write {
                             realm.delete(pool)

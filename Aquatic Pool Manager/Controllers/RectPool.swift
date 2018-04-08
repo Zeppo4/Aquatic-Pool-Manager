@@ -14,17 +14,6 @@ class RectPool : UIViewController {
     
     let realm = try! Realm()
     
-    
-    //var RectPoolName: Results<PoolName>!
-    
-    
- //   var name: Results<PoolName>?
-//    var width: Results<PoolName>?
-//    var length: Results<PoolName>?
-//    var depth: Results<PoolName>?
-//    var volume: Results<PoolName>?
-    
-    
     @IBOutlet weak var menuRectButton: UIBarButtonItem!
     @IBOutlet weak var poolWidth: UITextField!
     @IBOutlet weak var poolLength: UITextField!
@@ -116,30 +105,31 @@ class RectPool : UIViewController {
         
         let rectPoolName = realm.objects(PoolName.self)
         
-        
         if rectPoolName.isEmpty {
-           inputPoolName.text = "Add New Pool"
+            inputPoolName.text = "Add New Pool"
         } else {
-            
-        for pool in rectPoolName {
-            if pool.type == "rect" {
-                inputPoolName.text = pool.name
-                poolWidth.text = String(pool.width)
-                poolLength.text = String(pool.length)
-                poolDepth.text = String(pool.depth1)
-                RectPoolVolume.text = String(pool.volume)
-            } else {
-                poolWidth.text = ""
-                poolLength.text = ""
-                poolDepth.text = ""
-                RectPoolVolume.text = ""
-                inputPoolName.text = "Add New Pool"
+        
+            for pool in rectPoolName {
+                if pool.type == "rect" {
+                    inputPoolName.text = pool.name
+                    poolWidth.text = String(pool.width)
+                    poolLength.text = String(pool.length)
+                    poolDepth.text = String(pool.depth1)
+                    RectPoolVolume.text = String(pool.volume)
+                    break
+                    } else {
+                    
+                    poolWidth.text = ""
+                    poolLength.text = ""
+                    poolDepth.text = ""
+                    RectPoolVolume.text = ""
+                    inputPoolName.text = "Add New Pool"
+                }
             }
-            }
-            
-           }
+        }
         
         }
+    
     
     
     //MARK: - End of Class

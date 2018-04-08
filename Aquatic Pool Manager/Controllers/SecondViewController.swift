@@ -7,9 +7,14 @@
 //
 
 import UIKit
+import RealmSwift
 
 class SecondViewController: UIViewController {
     
+    let realm = try! Realm()
+    var button = dropDownBtn()
+    
+    var poolNameArray = [String]()
     
     
     @IBOutlet weak var resultsDate: UITextField!
@@ -30,11 +35,11 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var resultsCyanuricAcidAnalysis: UITextField!
     @IBOutlet weak var resultsAnalysisReport: UITextView!
     
+    let dateFormatter = DateFormatter()
     
-    
+    var toPass = String()
     var toPassITT = String()
     var toPassFT = String()
-    var toPass = String()
     var toPassFC = String()
     var toPassCC = String()
     var toPassPH = String()
@@ -42,14 +47,9 @@ class SecondViewController: UIViewController {
     var toPassC = String()
     var toPassCA = String()
     
-    let dateFormatter = DateFormatter()
-    
-    
-    var FreeChlorine:Int = 0
-    var TotalChlorine:Int = 0
-    var CyanuricAcid:Int = 0
-    
-    
+    //var FreeChlorine:Int = 0
+    //var TotalChlorine:Int = 0
+    //var CyanuricAcid:Int = 0
     var TF = Double()
     var Temp = 0.0
     var CF = Double()
@@ -58,7 +58,7 @@ class SecondViewController: UIViewController {
     var Alkalinity = 0.0
     var SaturationIndex = 0.0
     var PH = 0.0
-    var RSIA = 0.0
+    //var RSIA = 0.0
     var resultsTC = 0.0
     var resultsFC = 0.0
     var resultsAPH = 0.0
@@ -66,13 +66,10 @@ class SecondViewController: UIViewController {
     var resultsCal = 0.0
     var resultsCA = 0.0
     var resultsSI = 0.0
-    
     var lowPH = 0.0
     var highPH = 0.0
-    
     var totalAlkFactor = 0.0
-    
-    var clickFCResults = String()
+    //var clickFCResults = String()
     
     
     
@@ -80,7 +77,6 @@ class SecondViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
         
         
         
@@ -105,16 +101,16 @@ class SecondViewController: UIViewController {
             Temp = Double(toPass)!
         }
         
-        if Temp < 36 { TF = 0.0 }
-        else if Temp > 36 && Temp < 46 { TF = 0.1 }
-        else if Temp > 45 && Temp < 53 { TF = 0.2 }
-        else if Temp > 52 && Temp < 60 { TF = 0.3 }
-        else if Temp > 59 && Temp < 66 { TF = 0.4 }
-        else if Temp > 65 && Temp < 76 { TF = 0.5 }
-        else if Temp > 75 && Temp < 84 { TF = 0.6 }
-        else if Temp > 83 && Temp < 94 { TF = 0.7 }
-        else if Temp > 93 && Temp < 105 { TF = 0.8 }
-        else { TF = 0.9 }
+        if Temp < 40 { TF = 0.1 }
+        else if Temp > 40 && Temp < 50 { TF = 0.2 }
+        else if Temp > 50 && Temp < 56 { TF = 0.3 }
+        else if Temp > 56 && Temp < 63 { TF = 0.4 }
+        else if Temp > 63 && Temp < 70 { TF = 0.5 }
+        else if Temp > 70 && Temp < 80 { TF = 0.6 }
+        else if Temp > 80 && Temp < 86 { TF = 0.7 }
+        else if Temp > 86 && Temp < 100 { TF = 0.8 }
+        else if Temp > 100 && Temp < 115 { TF = 0.9 }
+        else { TF = 1.0 }
         
     
         Calcium = Double(toPassC)!
@@ -144,15 +140,9 @@ class SecondViewController: UIViewController {
         else if Alkalinity > 300 && Alkalinity < 401 { AF = 2.6 }
         else { AF = 2.9 }
 
-        
-        
-        
         PH = Double(toPassPH)!
         
         SaturationIndex = (PH + TF + CF + AF) - 12.1
-        
-        
-        
         
         //to desplay saturation index on Results Page
         self.resultsSaturationIndex.text = String(format: "%.1f", SaturationIndex)
@@ -162,7 +152,7 @@ class SecondViewController: UIViewController {
         
         //:Free Chlorine
         resultsFC = Double(toPassFC)!
-        if resultsFC > 0.5 && resultsFC < 3.5 { resultsFCAnalysis.inRange()
+        if resultsFC > 0.5 && resultsFC < 10.1 { resultsFCAnalysis.inRange()
         } else { resultsFCAnalysis.adjustmentNeeded() }
         
         //:Combined Chlorine
@@ -197,11 +187,39 @@ class SecondViewController: UIViewController {
         
         
         //:self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        let poolName = realm.objects(PoolName.self)
+        
+        if poolName.isEmpty {
+            button.setTitle("No Pools", for: .normal)
+        } else {
+            for pool in poolName {
+                    poolNameArray.append(pool.name)
+                print(poolNameArray)
+               
+            }
+            
+        }
+        
+        button = dropDownBtn.init(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+        button.setTitle("Select Pool", for: .normal)
+        
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.view.addSubview(button)
+        
+        //button.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        button.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -50).isActive = true
+        button.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: -200).isActive = true
         
         
+        button.widthAnchor.constraint(equalToConstant: 150).isActive = true
+        button.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        
+        button.dropView.dropDownOptions = poolNameArray
         
         
     }
+    
     @IBAction func clickFC(_ sender: Any) {
         if resultsFC > 0.5 && resultsFC < 3.5 { self.resultsAnalysisReport.text = String(format: "Free Chlorine is good no adjustment needed", resultsFC)
         } else
@@ -300,40 +318,161 @@ class SecondViewController: UIViewController {
         
     }
     
-//MARK: Total Alkalinity Factor
     
-//    func totalAlkalinityFactor(resultsAlk: UITextField) {
-//
-//        var resultsAlkFactor: Double? = Double(resultsAlk.text!)
-//
-//        if resultsAlkFactor >= 0.0 && resultsAlkFactor < 6.0 { let totalAlkFactor = 0.7
-//        } else if resultsAlkFactor < 26 {
-//            let totalAlkFactor = 1.4
-//        } else if resultsAlkFactor < 51 {
-//            let totalAlkFactor = 1.7
-//        } else if resultsAlkFactor < 76 {
-//            let totalAlkFactor = 1.9
-//        } else if resultsAlkFactor < 101 {
-//            let totalAlkFactor = 2.0
-//        } else if resultsAlkFactor =< 126 {
-//            let totalAlkFactor = 2.1
-//        } else if resultsAlkFactor < 151 {
-//            let totalAlkFactor = 2.2
-//        } else if resultsAlkFactor < 201 {
-//            let totalAlkFactor = 2.3
-//        } else if resultsAlkFactor < 251 {
-//            let totalAlkFactor = 2.4
-//        } else if resultsAlkFactor < 301 {
-//            let totalAlkFactor = 2.5
-//        } else if resultsAlkFactor < 401 {
-//            let totalAlkFactor = 2.6
-//        } else if resultsAlkFactor < 801 {
-//            let totalAlkFactor = 2.9
-//        } else { let totalAlkFactor = 3.0
-//        }
-//
+    //MARK: - Drop Down Button
+    
+    class dropDownBtn: UIButton, dropDownProtocol {
+        
+        func dropDownPressed(string: String) {
+            self.setTitle(string, for: .normal)
+            self.dismissDropDown()
+        }
+        
+        
+        var dropView = dropDownView()
+        
+        var height = NSLayoutConstraint()
+        
+        override init(frame: CGRect) {
+            super.init(frame: frame)
+            
+            //self.backgroundColor = UIColor.green
+            
+            self.backgroundColor = UIColor.darkText
+            self.layer.cornerRadius = 15
+            dropView = dropDownView.init(frame: CGRect.init(x: 0, y: 0, width: 0, height: 0))
+            dropView.delegate = self
+            dropView.translatesAutoresizingMaskIntoConstraints = false
+           
+        }
+        
+        override func didMoveToSuperview() {
+            self.superview?.addSubview(dropView)
+            self.superview?.bringSubview(toFront: dropView)
+            dropView.topAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+            dropView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+            dropView.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
+            height = dropView.heightAnchor.constraint(equalToConstant: 0)
+        }
+        var isOpen = false
+        override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+            if isOpen == false {
+                
+                isOpen = true
+                
+                NSLayoutConstraint.deactivate([self.height])
+                
+               if self.dropView.tableView.contentSize.height > 150 {
+                self.height.constant = 150
+                } else {
+                    self.height.constant = self.dropView.tableView.contentSize.height
+                }
+                
+                NSLayoutConstraint.activate([self.height])
+                
+                UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseInOut, animations: {
+                    self.dropView.layoutIfNeeded()
+                    self.dropView.center.y += self.dropView.frame.height / 2
+                }, completion: nil)
+                
+                
+            } else {
+                isOpen = false
+                
+                NSLayoutConstraint.deactivate([self.height])
+                self.height.constant = 0
+                NSLayoutConstraint.activate([self.height])
+                UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseInOut, animations: {
+                    self.dropView.center.y -= self.dropView.frame.height / 2
+                    self.dropView.layoutIfNeeded()
+                }, completion: nil)
+            }
+        }
+        
+        func dismissDropDown() {
+            isOpen = false
+            NSLayoutConstraint.deactivate([self.height])
+            self.height.constant = 0
+            NSLayoutConstraint.activate([self.height])
+            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: .curveEaseInOut, animations: {
+                self.dropView.center.y -= self.dropView.frame.height / 2
+                self.dropView.layoutIfNeeded()
+            }, completion: nil)
+        }
+        
+        required init?(coder aDecoder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
+        
+    }
+    
+    //MARK: - Class dropDownView
+    
+    class dropDownView: UIView, UITableViewDelegate, UITableViewDataSource {
+        
+        var dropDownOptions = [String]()
+        
+        var tableView = UITableView()
+        
+        var delegate : dropDownProtocol!
+        
+        override init(frame: CGRect) {
+            super.init(frame: frame)
+            
+            tableView.backgroundColor = UIColor.darkGray
+            self.backgroundColor = UIColor.darkGray
+            
+            tableView.delegate = self
+            tableView.dataSource = self
+            
+            tableView.translatesAutoresizingMaskIntoConstraints = false
+            
+            self.addSubview(tableView)
+            
+            tableView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
+            tableView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+            tableView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+            tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+            
+        }
+        
+        required init?(coder aDecoder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
+        
+        func numberOfSections(in tableView: UITableView) -> Int {
+            return 1
+        }
+        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+            return dropDownOptions.count
+        }
+        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            var cell = UITableViewCell()
+            
+            cell.textLabel?.text = dropDownOptions[indexPath.row]
+            cell.backgroundColor = UIColor.darkGray
+            return cell
+        }
+        
+        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            
+            self.delegate.dropDownPressed(string: dropDownOptions[indexPath.row])
+            self.tableView.deselectRow(at: indexPath, animated: true)
+            
+        }
+    }
     
     
+    
+    //MARK: - End of SecondViewController Class
+}
+
+//protocol  alkalinity {
+//    func alkalinityFactor (AlkalinityFactor: Double)
+//}
+
+protocol dropDownProtocol {
+    func dropDownPressed(string: String)
 }
 
 extension UITextField {
@@ -351,6 +490,7 @@ extension UITextField {
         //self.layer.shadowOpacity = 1.0
         //self.layer.shadowOffset = CGSize(width: 0, height: 0)
     }
+    
 }
 
 extension UITextField {
@@ -362,8 +502,8 @@ extension UITextField {
         self.frame.size = CGSize(width: 75, height: 25)
         self.layer.cornerRadius = 15
         
-        
     }
+    
 }
 
 
