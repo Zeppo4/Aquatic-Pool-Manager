@@ -83,7 +83,7 @@ class RoundPool : UIViewController {
                     break
                 } else {
                     
-                    roundPoolName.text = ""
+                    roundPoolName.text = "Add New Pool"
                     roundPoolWidth.text = ""
                     roundPoolLength.text = ""
                     roundPoolDepth.text = ""
@@ -123,6 +123,11 @@ class RoundPool : UIViewController {
         loadPoolData()
     }
     
+    @IBAction func poolNamePressed(_ sender: Any) {
+        if roundPoolName.text == "Add New Pool" {
+            roundPoolName.text = ""
+        }
+    }
     
     
 }

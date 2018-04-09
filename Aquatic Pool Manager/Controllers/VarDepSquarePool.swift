@@ -84,7 +84,7 @@ class VarDepSquarePool : UIViewController {
                     varDepSquareVolume.text = String(pool.volume)
                     break
                 } else {
-                    varDepSquarePoolName.text = ""
+                    varDepSquarePoolName.text = "Add New Pool"
                     varDepSquareWidth.text = ""
                     varDepSquareLength.text = ""
                     varDepSquareDepth1.text = ""
@@ -125,5 +125,10 @@ class VarDepSquarePool : UIViewController {
         loadPoolData()
     }
     
+    @IBAction func poolNamePressed(_ sender: Any) {
+        if varDepSquarePoolName.text == "Add New Pool" {
+            varDepSquarePoolName.text = ""
+        }
+    }
     
 }

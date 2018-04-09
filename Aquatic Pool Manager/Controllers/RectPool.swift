@@ -131,6 +131,12 @@ class RectPool : UIViewController {
         }
     
     
+    @IBAction func poolNamePressed(_ sender: Any) {
+        if inputPoolName.text == "Add New Pool" {
+        inputPoolName.text = ""
+        }
+        
+    }
     
     //MARK: - End of Class
 }

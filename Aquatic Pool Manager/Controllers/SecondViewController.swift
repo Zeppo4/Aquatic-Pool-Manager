@@ -9,12 +9,18 @@
 import UIKit
 import RealmSwift
 
+
+var dropDownSelection = String()
+var poolVolume = 0.0
+
+
 class SecondViewController: UIViewController {
     
     let realm = try! Realm()
     var button = dropDownBtn()
     
     var poolNameArray = [String]()
+    
     
     
     @IBOutlet weak var resultsDate: UITextField!
@@ -47,9 +53,7 @@ class SecondViewController: UIViewController {
     var toPassC = String()
     var toPassCA = String()
     
-    //var FreeChlorine:Int = 0
-    //var TotalChlorine:Int = 0
-    //var CyanuricAcid:Int = 0
+    
     var TF = Double()
     var Temp = 0.0
     var CF = Double()
@@ -58,7 +62,6 @@ class SecondViewController: UIViewController {
     var Alkalinity = 0.0
     var SaturationIndex = 0.0
     var PH = 0.0
-    //var RSIA = 0.0
     var resultsTC = 0.0
     var resultsFC = 0.0
     var resultsAPH = 0.0
@@ -69,7 +72,7 @@ class SecondViewController: UIViewController {
     var lowPH = 0.0
     var highPH = 0.0
     var totalAlkFactor = 0.0
-    //var clickFCResults = String()
+    
     
     
     
@@ -102,47 +105,57 @@ class SecondViewController: UIViewController {
         }
         
         if Temp < 40 { TF = 0.1 }
-        else if Temp > 40 && Temp < 50 { TF = 0.2 }
-        else if Temp > 50 && Temp < 56 { TF = 0.3 }
-        else if Temp > 56 && Temp < 63 { TF = 0.4 }
-        else if Temp > 63 && Temp < 70 { TF = 0.5 }
-        else if Temp > 70 && Temp < 80 { TF = 0.6 }
-        else if Temp > 80 && Temp < 86 { TF = 0.7 }
-        else if Temp > 86 && Temp < 100 { TF = 0.8 }
-        else if Temp > 100 && Temp < 115 { TF = 0.9 }
+        else if Temp > 39 && Temp < 50 { TF = 0.2 }
+        else if Temp > 49 && Temp < 56 { TF = 0.3 }
+        else if Temp > 55 && Temp < 63 { TF = 0.4 }
+        else if Temp > 62 && Temp < 70 { TF = 0.5 }
+        else if Temp > 69 && Temp < 80 { TF = 0.6 }
+        else if Temp > 79 && Temp < 86 { TF = 0.7 }
+        else if Temp > 85 && Temp < 100 { TF = 0.8 }
+        else if Temp > 99 && Temp < 115 { TF = 0.9 }
         else { TF = 1.0 }
         
     
         Calcium = Double(toPassC)!
         if Calcium < 26 { CF = 1.0 }
-        else if Calcium > 25 && Calcium < 51 { CF = 1.3 }
-        else if Calcium > 50 && Calcium < 76 { CF = 1.5 }
-        else if Calcium > 75 && Calcium < 101 { CF = 1.6 }
-        else if Calcium > 100 && Calcium < 126 { CF = 1.7 }
-        else if Calcium > 125 && Calcium < 151 { CF = 1.8 }
-        else if Calcium > 150 && Calcium < 201 { CF = 1.9 }
-        else if Calcium > 200 && Calcium < 251 { CF = 2.0 }
-        else if Calcium > 250 && Calcium < 301 { CF = 2.1 }
-        else if Calcium > 300 && Calcium < 401 { CF = 2.2 }
-        else { CF = 2.5 }
+        else if Calcium > 19 && Calcium < 30 { CF = 1.0 }
+        else if Calcium > 29 && Calcium < 39 { CF = 1.1 }
+        else if Calcium > 38 && Calcium < 48 { CF = 1.2 }
+        else if Calcium > 47 && Calcium < 59 { CF = 1.3 }
+        else if Calcium > 58 && Calcium < 68 { CF = 1.4 }
+        else if Calcium > 67 && Calcium < 86 { CF = 1.5 }
+        else if Calcium > 85 && Calcium < 111 { CF = 1.6 }
+        else if Calcium > 110 && Calcium < 136 { CF = 1.7 }
+        else if Calcium > 135 && Calcium < 161 { CF = 1.8 }
+        else if Calcium > 160 && Calcium < 221 { CF = 1.9 }
+        else if Calcium > 220 && Calcium < 271 { CF = 2.0 }
+        else if Calcium > 270 && Calcium < 326 { CF = 2.1 }
+        else if Calcium > 325 && Calcium < 426 { CF = 2.2 }
+        else if Calcium > 425 && Calcium < 526 { CF = 2.3 }
+        else if Calcium > 525 && Calcium < 626 { CF = 2.4 }
+        else if Calcium > 625 && Calcium < 851 { CF = 2.5 }
+        else { CF = 2.6 }
         
         
         Alkalinity = Double(toPassA)!
-        if Alkalinity < 26 { CF = 1.4 }
-        else if Alkalinity > 25 && Alkalinity < 51 { AF = 1.7 }
-        else if Alkalinity > 50 && Alkalinity < 76 { AF = 1.9 }
-        else if Alkalinity > 75 && Alkalinity < 101 { AF = 2.0 }
-        else if Alkalinity > 100 && Alkalinity < 126 { AF = 2.1 }
-        else if Alkalinity > 125 && Alkalinity < 151 { AF = 2.2 }
-        else if Alkalinity > 150 && Alkalinity < 201 { AF = 2.3 }
-        else if Alkalinity > 200 && Alkalinity < 251 { AF = 2.4 }
-        else if Alkalinity > 250 && Alkalinity < 301 { AF = 2.5 }
-        else if Alkalinity > 300 && Alkalinity < 401 { AF = 2.6 }
+        if Alkalinity < 38 { CF = 1.4 }
+        else if Alkalinity > 37 && Alkalinity < 63 { AF = 1.7 }
+        else if Alkalinity > 62 && Alkalinity < 88 { AF = 1.9 }
+        else if Alkalinity > 87 && Alkalinity < 113 { AF = 2.0 }
+        else if Alkalinity > 112 && Alkalinity < 138 { AF = 2.1 }
+        else if Alkalinity > 137 && Alkalinity < 176 { AF = 2.2 }
+        else if Alkalinity > 175 && Alkalinity < 226 { AF = 2.3 }
+        else if Alkalinity > 225 && Alkalinity < 276 { AF = 2.4 }
+        else if Alkalinity > 275 && Alkalinity < 351 { AF = 2.5 }
+        else if Alkalinity > 350 && Alkalinity < 451 { AF = 2.6 }
+        else if Alkalinity > 450 && Alkalinity < 551 { AF = 2.7 }
+        else if Alkalinity > 550 && Alkalinity < 651 { AF = 2.8 }
         else { AF = 2.9 }
 
         PH = Double(toPassPH)!
         
         SaturationIndex = (PH + TF + CF + AF) - 12.1
+        
         
         //to desplay saturation index on Results Page
         self.resultsSaturationIndex.text = String(format: "%.1f", SaturationIndex)
@@ -150,14 +163,14 @@ class SecondViewController: UIViewController {
         
         //: To display the Analysis results on Results Page
         
-        //:Free Chlorine
+        //MARK: - Free Chlorine
         resultsFC = Double(toPassFC)!
         if resultsFC > 0.5 && resultsFC < 10.1 { resultsFCAnalysis.inRange()
         } else { resultsFCAnalysis.adjustmentNeeded() }
         
         //:Combined Chlorine
         resultsTC = Double(toPassCC)!
-        if resultsTC > -0.9 && resultsTC < 0.6 { resultsTCAnalysis.inRange()
+        if resultsTC > -0.6 && resultsTC < 0.6 { resultsTCAnalysis.inRange()
         } else { resultsTCAnalysis.adjustmentNeeded() }
         
         //:PH
@@ -194,7 +207,7 @@ class SecondViewController: UIViewController {
         } else {
             for pool in poolName {
                     poolNameArray.append(pool.name)
-                print(poolNameArray)
+                //print(poolNameArray)
                
             }
             
@@ -220,20 +233,26 @@ class SecondViewController: UIViewController {
         
     }
     
+    //MARK: - Free Chlorine Calculations
+    
     @IBAction func clickFC(_ sender: Any) {
         if resultsFC > 0.5 && resultsFC < 3.5 { self.resultsAnalysisReport.text = String(format: "Free Chlorine is good no adjustment needed", resultsFC)
-        } else
-        { self.resultsAnalysisReport.text = "Add \(resultsFC * 10) Of Chlorine Shock"
+        } else {
+            self.resultsAnalysisReport.text = "Add \(2 * (poolVolume / 10000) * (5 - resultsFC))oz Of Chlorine Shock, To rise the pool to 5ppm of chlorine. your Volume is \(poolVolume)"
           
         }
     }
     @IBAction func clickCC(_ sender: Any) {
-        if resultsTC > -0.9 && resultsTC < 0.6 { self.resultsAnalysisReport.text = String(format: "Total Chlorine is good no adjustment needed", resultsTC)
-        } else
-        { self.resultsAnalysisReport.text = "Add \(resultsTC * 10) Of Chlorine Shock"
+        if resultsTC < 0.6  { self.resultsAnalysisReport.text = String(format: "Total Chlorine is good no adjustment needed", resultsTC)
+        } else {
+            let highCC = Double(round(10*(2.0 * (poolVolume / 10000) * ((resultsTC * 10)/16)))/10)
+            self.resultsAnalysisReport.text = "Add \(highCC)lbs Of Chlorine Shock"
         
         }
     }
+    
+    //MARK: - PH Calculations
+    
     @IBAction func clickPH(_ sender: Any) {
         
         if resultsAPH > 7.1 && resultsAPH < 7.9 { self.resultsAnalysisReport.text = String(format: "PH is good no adjustment needed", resultsAPH)
@@ -248,45 +267,63 @@ class SecondViewController: UIViewController {
         }
         
     }
+    
+    //MARK: - Alkatinity Calculation
+    
     @IBAction func clickAlk(_ sender: Any) {
+        
         if resultsAlk > 79.9 && resultsAlk < 121 { self.resultsAnalysisReport.text = String(format: "Alkatinity is good no adjustment needed", resultsAlk)
         }
         else if resultsAlk < 80.0 {
             let lowALK = 80.0 - resultsAlk
-            self.resultsAnalysisReport.text = "Alkatinity is low add, \(lowALK)Oz's of Sodium Bicarbonate"
+            
+            let alkAdjustment = Double(round(10*(1.4 * (poolVolume / 10000) * ((100 - lowALK)/10)))/10)
+            
+            self.resultsAnalysisReport.text = "Add \(alkAdjustment) lbs Of Sodium Bicarbonate, To rise the pool to 100ppm of Alkalinity. Your pool Volume is \(poolVolume)gal"
+            
+            
         } else
         {
-            let highALK = resultsAlk - 120
-            self.resultsAnalysisReport.text = "Alkatinity is high, drain \(highALK)% of pool water and refill with fresh water"
+            let highALK = Double(round(10*(2.1 * (poolVolume / 10000) * ((resultsAlk - 120)/10)))/10)
+            self.resultsAnalysisReport.text = "Add \(highALK)lbs of Sodium Bisulfate, To lower the pool to 120ppm of Alkalinity. Your Pool Volume is \(poolVolume)gal"
         }
         
     }
+    
+    //MARK: - Calcium Calculation
+    
     @IBAction func clickCalcium(_ sender: Any) {
-        if resultsCal > 149.0 && resultsCal < 501.0 { self.resultsAnalysisReport.text = String(format: "Alkatinity is good no adjustment needed", resultsCal)
+        if resultsCal > 149.0 && resultsCal < 501.0 { self.resultsAnalysisReport.text = String(format: "Calcium is good no adjustment needed", resultsCal)
         }
         else if resultsCal < 150.0 {
-            let lowCAL = 150.0 - resultsCal
-            self.resultsAnalysisReport.text = "Calcium is low add, \(lowCAL)Oz's of Sodium Bicarbonate"
+            let lowCAL = Double(round(10*(1.2 * (poolVolume / 10000) * ((300 - resultsCal)/10)))/10)
+            self.resultsAnalysisReport.text = "Add, \(lowCAL)lbs of Calcium Chloride, To rise the pool to 300ppm of Calcium. Your pool Volume is \(poolVolume)gal"
         } else
         {
-            let highCAL = resultsCal - 500.0
-            self.resultsAnalysisReport.text = "Calcium is high, drain \(highCAL)% of pool water and refill with fresh water"
+            
+            self.resultsAnalysisReport.text = "Calcium is high, drain 1/3 of pool water and refill with fresh water and retest the next day"
         }
         
     }
+    
+    //MARK: - Cyanuric Acid Calculation
+    
     @IBAction func clickCyanuricAcid(_ sender: Any) {
-        if resultsCA > 19.0 && resultsCA < 51.0 { self.resultsAnalysisReport.text = String(format: "Cyanuric Acid is good no adjustment needed", resultsCA)
+        if resultsCA > 19.0 && resultsCA < 101.0 { self.resultsAnalysisReport.text = String(format: "Cyanuric Acid is good no adjustment needed", resultsCA)
         }
-        else if resultsCA < 50.0 {
-            let lowCA = 50.0 - resultsCA
-            self.resultsAnalysisReport.text = "Cyanuric Acid is low add, \(lowCA)Oz's of Stabulizer"
+        else if resultsCA < 30.0 {
+            let lowCA = Double(round(10*(0.81 * (poolVolume / 10000) * ((50 - resultsCA)/10)))/10)
+            self.resultsAnalysisReport.text = "Add, \(lowCA)Oz's of Stabulizer or Cyanuric Acid, To rise the pool to 50ppm of Cyanuric Acid. Your pool Volume is \(poolVolume)gal"
         } else
         {
-            let highCA = resultsCA - 50.0
-            self.resultsAnalysisReport.text = "Cyanuric Acid is high, drain \(highCA)% of pool water and refill with fresh water"
+            
+            self.resultsAnalysisReport.text = "Stabulizer is high. Ideal is 30 - 50 with a max of 100 yours is \(resultsCA). Drain 1/3 of pool water and refill with fresh water and retest the next day. Repeat this until your readings are below 100"
         }
         
     }
+    
+    //MARK: - Saturation Index Calculation
+    
     @IBAction func clickSaturationIndex(_ sender: Any) {
         if SaturationIndex > -0.51 && SaturationIndex < 0.51 { self.resultsAnalysisReport.text = String(format: "Saturation Index is good no adjustment needed", String(format: "%.2f",SaturationIndex))
         }
@@ -416,6 +453,7 @@ class SecondViewController: UIViewController {
         
         var delegate : dropDownProtocol!
         
+        
         override init(frame: CGRect) {
             super.init(frame: frame)
             
@@ -451,25 +489,41 @@ class SecondViewController: UIViewController {
             
             cell.textLabel?.text = dropDownOptions[indexPath.row]
             cell.backgroundColor = UIColor.darkGray
+            
             return cell
         }
         
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             
             self.delegate.dropDownPressed(string: dropDownOptions[indexPath.row])
+            let dropDownSelection = dropDownOptions[indexPath.row]
+            
+            
+            poolSelected(dropDownSelection: dropDownSelection)
+            
             self.tableView.deselectRow(at: indexPath, animated: true)
             
         }
     }
     
     
-    
     //MARK: - End of SecondViewController Class
 }
+func poolSelected(dropDownSelection: String) {
+    
+    let realm = try! Realm()
+    let poolName = realm.objects(PoolName.self)
+    
+    for pool in poolName {
+        if pool.name == dropDownSelection {
+            poolVolume = pool.volume
+            
+            break
+        }
+        
+    }
+}
 
-//protocol  alkalinity {
-//    func alkalinityFactor (AlkalinityFactor: Double)
-//}
 
 protocol dropDownProtocol {
     func dropDownPressed(string: String)
@@ -483,12 +537,7 @@ extension UITextField {
         self.backgroundColor = UIColor.green
         self.frame.size = CGSize(width: 75, height: 25)
         self.layer.cornerRadius = 15
-        //self.layer.cornerRadius = self.frame.height / 2
-        //self.setTitleColor(UIColor.white, for: .normal)
-        //self.layer.shadowColor = UIColor(red: 0, green: 0.1922, blue: 0.8392, alpha: 1).cgColor
-        //self.layer.shadowRadius = 3
-        //self.layer.shadowOpacity = 1.0
-        //self.layer.shadowOffset = CGSize(width: 0, height: 0)
+        
     }
     
 }

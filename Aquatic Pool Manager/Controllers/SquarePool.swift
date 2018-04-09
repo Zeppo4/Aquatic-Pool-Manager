@@ -78,7 +78,7 @@ class SquarePool : UIViewController {
                     squarePoolVolume.text = String(pool.volume)
                     break
                 } else {
-                    squarePoolName.text = ""
+                    squarePoolName.text = "Add New Pool"
                     squarePoolWidth.text = ""
                     squarePoolLength.text = ""
                     squarePoolDepth.text = ""
@@ -118,5 +118,10 @@ class SquarePool : UIViewController {
     loadPoolData()
 }
     
+    @IBAction func poolNamePressed(_ sender: Any) {
+        if squarePoolName.text == "Add New Pool" {
+            squarePoolName.text = ""
+        }
+    }
 }
 

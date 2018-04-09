@@ -85,7 +85,7 @@ class VarDepRectPool : UIViewController {
                     varDepRectVolume.text = String(pool.volume)
                     break
                 } else {
-                    varDepRectName.text = ""
+                    varDepRectName.text = "Add New Pool"
                     varDepRectWidth.text = ""
                     varDepRectLength.text = ""
                     varDepRectDepth1.text = ""
@@ -123,6 +123,12 @@ class VarDepRectPool : UIViewController {
         }
         
         loadPoolData()
+    }
+    
+    @IBAction func poolNamePressed(_ sender: Any) {
+        if varDepRectName.text == "Add New Pool" {
+            varDepRectName.text = ""
+        }
     }
     
     
