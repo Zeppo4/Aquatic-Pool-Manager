@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class FirstViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBOutlet weak var inputTemp: UITextField!
@@ -34,6 +34,10 @@ class FirstViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        //self.textField.delegate = self;
+        
+        //initializeTextFields()
+        
         menuButton.target = revealViewController()
         menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
         revealViewController().rearViewRevealWidth = 275
@@ -42,7 +46,11 @@ class FirstViewController: UIViewController {
        view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         
     }
-    
+//    func initializeTextFields() {
+//        let digitsOnlyTextField = inputTemp
+//        digitsOnlyTextField?.delegate = self
+//        //digitsOnlyTextField?.keyboardType = UIKeyboardType.numberPad
+//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -119,8 +127,35 @@ class FirstViewController: UIViewController {
             
         }
     }
+    
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if string.count == 0 {
+            return true
+        }
+        //let digitsOnlyTextField = inputTemp
+        let currentText = textField.text ?? ""
+        print(textField)
+        let prospectiveText = (currentText as NSString).replacingCharacters(in: range, with: string)
+        
+        switch textField {
+        case inputTemp:
+            
+            return prospectiveText.contains("0123456789.") &&
+            prospectiveText.count <= 5
+            
+        default:
+            return true
+        }
+        
+//        let allowedCharacters = CharacterSet.decimalDigits
+//        let characterSet = CharacterSet(charactersIn: string)
+//        return allowedCharacters.isSuperset(of: characterSet)
+        
 }
-
+    
+    //MARK: End of Class
+}
 
 
 

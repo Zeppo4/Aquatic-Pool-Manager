@@ -16,9 +16,9 @@ var poolVolume = 0.0
 
 class SecondViewController: UIViewController {
     
+    
     let realm = try! Realm()
     var button = dropDownBtn()
-    
     var poolNameArray = [String]()
     
     
@@ -207,14 +207,15 @@ class SecondViewController: UIViewController {
         } else {
             for pool in poolName {
                     poolNameArray.append(pool.name)
-                //print(poolNameArray)
-               
+                
             }
             
         }
         
         button = dropDownBtn.init(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         button.setTitle("Select Pool", for: .normal)
+        button.titleLabel?.textColor = UIColor.black
+        
         
         button.translatesAutoresizingMaskIntoConstraints = false
         
@@ -373,10 +374,15 @@ class SecondViewController: UIViewController {
         override init(frame: CGRect) {
             super.init(frame: frame)
             
-            //self.backgroundColor = UIColor.green
             
-            self.backgroundColor = UIColor.darkText
+            //MARK: - Button background color
+            
+            self.backgroundColor = UIColor.oceanBlue
+            self.setTitleColor(UIColor.black, for: .normal)
             self.layer.cornerRadius = 15
+            //self.frame.size = CGSize(width: 75, height: 25)
+           
+            
             dropView = dropDownView.init(frame: CGRect.init(x: 0, y: 0, width: 0, height: 0))
             dropView.delegate = self
             dropView.translatesAutoresizingMaskIntoConstraints = false
@@ -457,8 +463,7 @@ class SecondViewController: UIViewController {
         override init(frame: CGRect) {
             super.init(frame: frame)
             
-            tableView.backgroundColor = UIColor.darkGray
-            self.backgroundColor = UIColor.darkGray
+            tableView.backgroundColor = UIColor.universalBlue
             
             tableView.delegate = self
             tableView.dataSource = self
@@ -487,8 +492,14 @@ class SecondViewController: UIViewController {
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             var cell = UITableViewCell()
             
+            
+            //MARK: - Drop Down Color
+            
             cell.textLabel?.text = dropDownOptions[indexPath.row]
-            cell.backgroundColor = UIColor.darkGray
+            cell.backgroundColor = UIColor.grassGreen
+            cell.textLabel?.textColor = UIColor.black
+            cell.layer.cornerRadius = 15
+            
             
             return cell
         }
@@ -544,16 +555,24 @@ extension UITextField {
 
 extension UITextField {
     func adjustmentNeeded() {
-        self.text = "Out of Range"
-        self.textAlignment = NSTextAlignment.center
-        self.textColor = UIColor.black
-        self.backgroundColor = UIColor.red
-        self.frame.size = CGSize(width: 75, height: 25)
-        self.layer.cornerRadius = 15
+        var imageView = UIImageView()
+        var image = UIImage(named: "warning.png")
+        
+        //self.text = "Out of Range"
+        //self.textAlignment = NSTextAlignment.center
+        //self.textColor = UIColor.black
+        //self.backgroundColor = UIColor.clear
+        //self.frame.size = CGSize(width: 75, height: 25)
+        //self.layer.cornerRadius = 15
+        imageView.image = image
+        imageView.frame = CGRect(x: 20, y: 0, width: 30, height: 25)
+        
+        self.addSubview(imageView)
         
     }
     
 }
+
 
 
 

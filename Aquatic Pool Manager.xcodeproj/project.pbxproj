@@ -21,7 +21,9 @@
 		631354E41F76FF0500295F42 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 631354E31F76FF0500295F42 /* SWRevealViewController.m */; };
 		636D5CCB206D28B800630503 /* Alkalinity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636D5CCA206D28B800630503 /* Alkalinity.swift */; };
 		63777B97202CA09200A7CDAD /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63777B93202C9CB000A7CDAD /* FirstViewController.swift */; };
+		63869CF9209F88F900AFBA97 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63869CF8209F88F900AFBA97 /* Extensions.swift */; };
 		638CD0F6204894BD008242F4 /* PoolName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638CD0F5204894BD008242F4 /* PoolName.swift */; };
+		6394804520992EA80093905A /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6394804420992EA80093905A /* StringUtils.swift */; };
 		7521166C41B4376B9C58CB79 /* Pods_Aquatic_Pool_Manager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19D71D463288E491BD5C8FC2 /* Pods_Aquatic_Pool_Manager.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,7 +47,10 @@
 		631354E31F76FF0500295F42 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = ../../SWRevealViewController.m; sourceTree = "<group>"; };
 		636D5CCA206D28B800630503 /* Alkalinity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alkalinity.swift; sourceTree = "<group>"; };
 		63777B93202C9CB000A7CDAD /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		63869CD6209F6E4300AFBA97 /* Data Model */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "Data Model"; sourceTree = "<group>"; };
+		63869CF8209F88F900AFBA97 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = "/Users/MacUser/Desktop/App Development/Aquatic Pool Manager/Aquatic Pool Manager/Data Model/Extensions.swift"; sourceTree = "<absolute>"; };
 		638CD0F5204894BD008242F4 /* PoolName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoolName.swift; sourceTree = "<group>"; };
+		6394804420992EA80093905A /* StringUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringUtils.swift; sourceTree = "<group>"; };
 		AF2B3C6635B7EA3D98F94333 /* Pods-Aquatic Pool Manager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aquatic Pool Manager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Aquatic Pool Manager/Pods-Aquatic Pool Manager.debug.xcconfig"; sourceTree = "<group>"; };
 		E9EDFD03DC3679F27B313B85 /* Pods-Aquatic Pool Manager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aquatic Pool Manager.release.xcconfig"; path = "Pods/Target Support Files/Pods-Aquatic Pool Manager/Pods-Aquatic Pool Manager.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -117,8 +122,11 @@
 		63777B91202C9C4300A7CDAD /* Data Model */ = {
 			isa = PBXGroup;
 			children = (
+				63869CF8209F88F900AFBA97 /* Extensions.swift */,
 				636D5CCA206D28B800630503 /* Alkalinity.swift */,
 				638CD0F5204894BD008242F4 /* PoolName.swift */,
+				6394804420992EA80093905A /* StringUtils.swift */,
+				63869CD6209F6E4300AFBA97 /* Data Model */,
 			);
 			path = "Data Model";
 			sourceTree = "<group>";
@@ -287,6 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				631354CE1F76F7D200295F42 /* SecondViewController.swift in Sources */,
+				6394804520992EA80093905A /* StringUtils.swift in Sources */,
 				631354D81F76F83800295F42 /* RectPool.swift in Sources */,
 				631354D41F76F80F00295F42 /* VarDepRectPool.swift in Sources */,
 				63777B97202CA09200A7CDAD /* FirstViewController.swift in Sources */,
@@ -298,6 +307,7 @@
 				631354E41F76FF0500295F42 /* SWRevealViewController.m in Sources */,
 				631354DB1F76F85C00295F42 /* RoundPool.swift in Sources */,
 				631354AE1F76F30600295F42 /* AppDelegate.swift in Sources */,
+				63869CF9209F88F900AFBA97 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
