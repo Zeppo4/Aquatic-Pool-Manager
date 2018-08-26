@@ -1,0 +1,6 @@
+framework module Pods_Aquatic_Pool_Manager {
+  umbrella header "Pods-Aquatic Pool Manager-umbrella.h"
+
+  export *
+  module * { export * }
+}
