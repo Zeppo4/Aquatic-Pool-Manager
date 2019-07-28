@@ -674,7 +674,8 @@ extension List: RangeReplaceableCollection {
     // These should not be necessary, but Swift 3.1's compiler fails to infer the `SubSequence`,
     // and the standard library neglects to provide the default implementation of `subscript`
     /// :nodoc:
-    public typealias SubSequence = RangeReplaceableRandomAccessSlice<List>
+    //public typealias SubSequence = RangeReplaceableRandomAccessSlice<List>
+    public typealias SubSequence = Slice<List>
 
     /// :nodoc:
     public subscript(slice: Range<Int>) -> SubSequence {

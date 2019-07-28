@@ -47,7 +47,8 @@
 		631354E31F76FF0500295F42 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = ../../SWRevealViewController.m; sourceTree = "<group>"; };
 		636D5CCA206D28B800630503 /* Alkalinity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alkalinity.swift; sourceTree = "<group>"; };
 		63777B93202C9CB000A7CDAD /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		63869CD6209F6E4300AFBA97 /* Data Model */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "Data Model"; sourceTree = "<group>"; };
+		6378F8DF2138A6FE0093B58D /* Aquatic Pool Manager */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Aquatic Pool Manager"; sourceTree = "<group>"; };
+		63869CD6209F6E4300AFBA97 /* Data Model */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Data Model"; sourceTree = "<group>"; };
 		63869CF8209F88F900AFBA97 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = "/Users/MacUser/Desktop/App Development/Aquatic Pool Manager/Aquatic Pool Manager/Data Model/Extensions.swift"; sourceTree = "<absolute>"; };
 		638CD0F5204894BD008242F4 /* PoolName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoolName.swift; sourceTree = "<group>"; };
 		6394804420992EA80093905A /* StringUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringUtils.swift; sourceTree = "<group>"; };
@@ -112,6 +113,7 @@
 				63777B96202C9D8D00A7CDAD /* Supporting Files */,
 				631354D51F76F82600295F42 /* BackTableVC.swift */,
 				631354E21F76FF0500295F42 /* SWRevealViewController.h */,
+				6378F8DF2138A6FE0093B58D /* Aquatic Pool Manager */,
 				631354E31F76FF0500295F42 /* SWRevealViewController.m */,
 				631354BC1F76F30600295F42 /* Info.plist */,
 				631354E11F76FF0400295F42 /* Aquatic Pool Manager-Bridging-Header.h */,
